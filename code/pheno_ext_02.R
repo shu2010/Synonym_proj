@@ -1,3 +1,5 @@
+#!/usr/bin/Rscript
+
 ##this script captures prioritises samples for PheWAS case-control split
 
 
