@@ -1,3 +1,5 @@
+#!/usr/bin/Rscript
+
 ##read directly from matrix data
 
 phen_dat <- read.delim("~/Syn_collab/test.08302019.xls.study.IDs.tsv", sep = "\t",
