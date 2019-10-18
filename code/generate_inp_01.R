@@ -11,7 +11,7 @@ phen_dat1[[2]] <- factor(phen_dat1[[2]], levels = levels(phen_dat1$code))
 phen_mat <- table(phen_dat1)
 #head(colnames(phen_mat)[which(phen_mat[1,] > 0)]) (works)
 ##dim(phen_mat) = 92279 x 22790
-phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
+#phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
 ##phenotypes reported gt 50 (filter)
 ##remove phenotypes with no sample hits or have greater
 ##than 50 samples in them; some IBD pairs are not present in the phen_samp mat
