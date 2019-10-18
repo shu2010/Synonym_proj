@@ -5,7 +5,7 @@
 
 phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
 IBD_dist1_rel1 <- readRDS("~/Syn_collab/IBD_dist1_rel1.rds")
-
+IBD_dist1_rel1 <- IBD_dist1_rel1[order(IBD_dist1_rel1$PI_HAT, decreasing = F),] 
 #function to prioritise the sample with phenotypic info.
 
 pick_pinf <- function(ibd_dat){
