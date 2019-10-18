@@ -1,9 +1,10 @@
 ##duplication check
 # ##check duplication of samples in randomly picked cases
 ##Function for checking duplicates and reducing the numbers taking into account the phenotypes
+library(rlist)
+phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
 dup_adj <- function(tab_phe){
-  library(tidyverse)
-  library(rlist)
+ 
   print(dim(tab_phe))
   tab_phe <- as.data.frame(tab_phe)
   
