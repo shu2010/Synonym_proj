@@ -13,3 +13,17 @@ apply(dup_rm_sel[,-c(1:3)], 2, function(x)length(unique(x)))
 ##check with positive control
 pos_cont <- read.delim("~/Syn_collab/selected.txt", header = T, sep = "")
 apply(dup_rm_sel[,-c(1:3)], 2, function(x)table(unique(x) %in% pos_cont$FID))
+
+##check phenotype match using phen_mat
+uniq_samp <- apply(dup_rm_sel[,-c(1:3)], 2, function(x)unique(x))
+phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
+
+phen_mat_chk <- phen_mat[colnames(uniq_samp) %in% names(uniq_samp),]
+
+tol_phen <- colSums(phen_mat_chk)
+
+pos_con_sum <- colSums(phen_mat_chk[rownames(phen_mat_chk) %in% pos_cont$FID,])
+
+dup_rm_sum <- apply(dup_rm_sel[,-c(1:3)], 2, function(x) colSums(phen_mat_chk[rownames(phen_mat_chk) %in% x,]))
+
+dup_rm_sum_comp <- cbind.data.frame(tol_phen, pos_con_sum, dup_rm_sum)
