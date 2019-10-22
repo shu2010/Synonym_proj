@@ -18,7 +18,7 @@ apply(dup_rm_sel[,-c(1:3)], 2, function(x)table(unique(x) %in% pos_cont$FID))
 uniq_samp <- apply(dup_rm_sel[,-c(1:3)], 2, function(x)unique(x))
 phen_mat <- readRDS("~/Syn_collab/phen_mat.rds")
 
-phen_mat_chk <- phen_mat[colnames(uniq_samp) %in% names(uniq_samp),]
+phen_mat_chk <- phen_mat[,colnames(phen_mat) %in% names(uniq_samp)]
 
 tol_phen <- colSums(phen_mat_chk)
 
