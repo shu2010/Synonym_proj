@@ -37,7 +37,7 @@ pick_pinf_phen <- function(ibd_dat){
   p1 <- ibd_dat[1]
   p2 <- ibd_dat[2]
   pi_hat <- ibd_dat[3]
-  phen <- colnames(phen_mat)[1:5]
+  phen <- colnames(phen_mat)          #[1:5]
   # p_mat <- phen_mat[,colnames(phen_mat) %in% phen]
   c1 <- phen_mat[rownames(phen_mat) %in% c(as.character(p1), as.character(p2)), colnames(phen_mat) %in% phen]
   

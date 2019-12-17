@@ -32,3 +32,4 @@ IBD_dist1_rel1 <- IBD_dist1_rel[IBD_dist1_rel$FID1 %in% rownames(phen_mat) & IBD
 
 saveRDS(phen_mat, file = "~/Syn_collab/phen_mat.rds", compress = T)
 saveRDS(IBD_dist1_rel1, file = "~/Syn_collab/IBD_dist1_rel1.rds", compress = T)
+
